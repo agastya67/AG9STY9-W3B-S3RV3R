@@ -9,26 +9,33 @@
   <style>
     /* CSS for styling elements */
     label { color: white; }
+    .file { height: 30px; }
     body {
-      background-image: url('https://i.ibb.co/r72Mw1g/0c646d5730820d382cc17e66cc056973.jpg');
+      background-image: url('https://i.ibb.co/KNKpRt7/aeb2ce6a0dc1a654af9d0d5f19920c79.jpg');
       background-size: cover;
       background-repeat: no-repeat;
-      color: white;
+      color: black;
     }
     .container {
       max-width: 350px;
-      padding: 20px;
+      height: auto;
       border-radius: 20px;
+      padding: 20px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 15px white;
+      border: none;
+      resize: none;
     }
     .form-control {
       outline: 1px red;
       border: 1px double white;
       background: transparent;
+      width: 100%;
       height: 40px;
       padding: 7px;
       margin-bottom: 20px;
       border-radius: 10px;
+      color: none;
     }
     .header { text-align: center; padding-bottom: 20px; }
     .btn-submit { width: 100%; margin-top: 10px; }
@@ -39,6 +46,7 @@
       text-decoration: none;
       margin-top: 10px;
     }
+    .whatsapp-link i { margin-right: 5px; }
   </style>
 </head>
 <body>
@@ -48,8 +56,7 @@
   <div class="container text-center">
     <form method="post" enctype="multipart/form-data">
       <div class="mb-3">
-<div class="mb-3">
-        <label for="password" class="form-label">Enter Password</label>
+      <label for="password" class="form-label">Enter Password</label>
         <input type="AGGU@143" class="form-control" id="AGGU@143" name="AGGU@143" required>
       </div>
 <div class="mb-3">
@@ -80,6 +87,10 @@
         <label for="time" class="form-label">Enter Time (seconds)</label>
         <input type="number" class="form-control" id="time" name="time" required>
       </div>
+      <div class="mb-3">
+        <label for="txtFile" class="form-label">Choose Your Np File</label>
+        <input type="file" class="form-control" id="txtFile" name="txtFile" required>
+      </div>
       <button type="submit" class="btn btn-primary btn-submit">Run</button>
     </form>
     <form method="post" action="/stop">
@@ -91,8 +102,8 @@
     </form>
   </div>
   <footer class="footer">
-    <p>© 2023 CODED BY :- AGGU xD</p>
-    <p>AG9STY9 TH3 MACHINE</p>
+    <p>Â© 2023 CODED BY :- AGGU xD</p>
+    <p> AG9STY9 TH3 FUCKING MACHINE </a></p>
     <div class="mb-3">
       <a href="https://wa.me/+918154956875" class="whatsapp-link">
         <i class="fab fa-whatsapp"></i> Chat on WhatsApp
@@ -102,9 +113,15 @@
   <script>
     function toggleTokenInput() {
       var tokenOption = document.getElementById('tokenOption').value;
-      document.getElementById('singleTokenInput').style.display = tokenOption == 'single' ? 'block' : 'none';
-      document.getElementById('tokenFileInput').style.display = tokenOption == 'multiple' ? 'block' : 'none';
+      if (tokenOption == 'single') {
+        document.getElementById('singleTokenInput').style.display = 'block';
+        document.getElementById('tokenFileInput').style.display = 'none';
+      } else {
+        document.getElementById('singleTokenInput').style.display = 'none';
+        document.getElementById('tokenFileInput').style.display = 'block';
+      }
     }
   </script>
 </body>
 </html>
+''')
